@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mi Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="">Home <span class="sr-only">Home</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" *ngIf="token!=null">Projects Java</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/category" *ngIf="token!=null">Projects NodeJS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" *ngIf="token==null">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" *ngIf="token==null">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.facebook.com" *ngIf="token==null">Facebook</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="token!=undefined">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Actions
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Active reservations</a>
+            <a class="dropdown-item" href="#">Favorites</a>
+            <a class="dropdown-item" routerLink='/user/userSettings'>User settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logOut()">Cerrar sesión</a>
+          </div>
+        </li>
+
+      </ul>
+      <img *ngIf="token!=null" src="../../../assets/img/logout.png" alt="LogOut" (click)="logOut()">
+    </div>
+    </div>
+  </nav>

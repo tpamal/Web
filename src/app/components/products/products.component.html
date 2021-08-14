@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<br>
+<form class="form-inline my-2 my-lg-0" (ngSubmit)="onSubmit()">
+  <input [(ngModel)]="search" name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+</form>
+<br>
+<div class="card" style="width: 18rem; display: inline-block; margin: 5px;" *ngFor="let hotel of hotels | search:search">
+    <div class="card-body">
+      <h5 class="card-title">{{hotel.data.name}} | {{hotel.data.stars}} stars</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{hotel.data.ubication}}</h6>
+      <p class="card-text">Capacity: {{hotel.data.capacity}} <br> Price: Q{{hotel.data.price}}</p>
+      <a href="#" class="card-link">Show more</a>
+    </div>
+  </div>

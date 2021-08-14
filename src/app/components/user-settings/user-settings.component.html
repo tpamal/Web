@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<br>
+
+<div class="span3 well">
+  <div style="text-align: center;">
+  <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" class="img-circle"></a>
+  <h3>{{user.username}}</h3>
+  <em>click my face for more</em>
+  </div>
+</div>
+
+<div class="text-center">
+  <button type="button" class="btn btn-outline-danger" (click)="deleteAccount()">Delete Account</button>
+</div>
+<!-- Modal-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+              <h4 class="modal-title" id="myModalLabel">More About {{user.name}}</h4>
+              </div>
+          <div class="modal-body">
+              <div>
+              <a href=""><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+              </div>
+              <hr>
+
+              <form class="form-signin" (ngSubmit)="onSubmit()">
+                <h1 class="h3 mb-3 font-weight-normal">Update your account</h1>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" [(ngModel)]="user.name" name="name" class="form-control" id="name" placeholder="your name">
+              </div>
+              
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" [(ngModel)]="user.username" name="username" class="form-control" id="username" placeholder="username">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" [(ngModel)]="user.email" name="email" class="form-control" id="email" placeholder="email">
+              </div>
+                
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+              
+          </div>
+          <div class="modal-footer">
+
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal-->
+
